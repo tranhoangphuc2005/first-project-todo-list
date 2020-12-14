@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Table, Button } from "reactstrap";
 
-const TodoList = ({ todos, deteleTodo }) => {
+const TodoList = ({ todos, delete }) => {
   const handleDelete = () => {
-    deteleTodo(todos.id);
+    delete todo.id;
   };
   return (
     <Container className="themed-container">
@@ -25,7 +25,11 @@ const TodoList = ({ todos, deteleTodo }) => {
                 <td>{todo.isDone === true ? "Complted" : "Not complete"}</td>
                 <td>{todo.endDate}</td>
                 <td>
-                  <Button outline color="danger" onClick={handleDelete}>
+                  <Button
+                    outline
+                    color="danger"
+                    onClick={() => handleDelete(todo.id)}
+                  >
                     Delete
                   </Button>{" "}
                 </td>
