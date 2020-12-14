@@ -32,7 +32,7 @@ function App() {
 
   const deleteTodo = async (id) => {
     let res = await axios.delete(url, { id });
-    setTodos([]);
+    setTodos([res.data]);
   };
 
   return (
