@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Table, Button } from "reactstrap";
 
-const TodoList = ({ todos }) => {
-  console.log(todos);
+const TodoList = ({ todos, deteleTodo }) => {
+  const handleDelete = () => {
+    deteleTodo(todos.id);
+  };
   return (
     <Container className="themed-container">
       <Table striped>
@@ -23,7 +25,7 @@ const TodoList = ({ todos }) => {
                 <td>{todo.isDone === true ? "Complted" : "Not complete"}</td>
                 <td>{todo.endDate}</td>
                 <td>
-                  <Button outline color="danger">
+                  <Button outline color="danger" onClick={handleDelete}>
                     Delete
                   </Button>{" "}
                 </td>

@@ -30,13 +30,18 @@ function App() {
     setTodos([...todos, res.data]);
   };
 
+  const deleteTodo = async (id) => {
+    let res = await axios.delete(url, { id });
+    setTodos([]);
+  };
+
   return (
     <div>
       {/* Form Input */}
       <FormTodo onSearch={searchTodos} onAddTodo={handleAddTodo} />
 
       {/* Todolist */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} delete={deleteTodo} />
     </div>
   );
 }

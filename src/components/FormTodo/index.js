@@ -38,10 +38,11 @@ const FormTodo = ({ onSearch, onAddTodo }) => {
           <InputGroup>
             <Input value={text} onChange={(e) => setText(e.target.value)} />
             <InputGroupAddon addonType="append">
-              <InputGroupText>Search</InputGroupText>
+              <InputGroupText>
+                <Button onClick={handleClick}>Search</Button>
+              </InputGroupText>
             </InputGroupAddon>
           </InputGroup>
-          <Button onClick={handleClick}>Submit</Button>
           <Button onClick={() => setIsOpen(true)}>Add</Button>
         </Col>
       </Row>
