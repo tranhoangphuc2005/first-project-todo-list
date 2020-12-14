@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Table, Button } from "reactstrap";
 
-const TodoList = ({ todos, delete }) => {
-  const handleDelete = () => {
-    delete todo.id;
+const TodoList = ({ todos, onDelete }) => {
+  const handleDelete = (id) => {
+    onDelete(id);
   };
   return (
     <Container className="themed-container">

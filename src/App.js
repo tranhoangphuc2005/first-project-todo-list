@@ -41,7 +41,7 @@ function App() {
       <FormTodo onSearch={searchTodos} onAddTodo={handleAddTodo} />
 
       {/* Todolist */}
-      <TodoList todos={todos} delete={deleteTodo} />
+      <TodoList todos={todos} onDelete={deleteTodo} />
     </div>
   );
 }
